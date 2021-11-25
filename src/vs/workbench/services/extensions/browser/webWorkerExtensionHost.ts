@@ -295,6 +295,9 @@ export class WebWorkerExtensionHost extends Disposable implements IExtensionHost
 			}
 		);
 
+		// TODO@joao: let's use this mechanism to invert the regular MessagePort sending.
+		// it is currently being sent from the extension host to the outside. we could
+		// send it in this collection instead
 		const messagePorts = this._environmentService.options?.messagePorts ?? new Map();
 		worker.postMessage(messagePorts as any, [...messagePorts.values()]);
 
