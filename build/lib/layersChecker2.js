@@ -202,6 +202,7 @@ const RULES = [
 ];
 const TS_CONFIG_PATH = (0, path_1.join)(__dirname, '../../', 'src', 'tsconfig.json');
 let hasErrors = false;
+// @CodeScene(disable:"Excess Number of Function Arguments")
 function checkFile(program, sourceFile, rule) {
     checkNode(sourceFile);
     function checkNode(node) {
